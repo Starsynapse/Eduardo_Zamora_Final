@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class RocketShip
@@ -9,18 +10,43 @@ class RocketShip
         
         unsigned int fuel;
         
+        vector<unsigned int> fuelCells;
+        
     public:
         RocketShip();
         
         void setName(string the_name);
         
-        string getName();
+        string getName() const;
         
-        void setFuel(int the_fuel);
+        void setFuel(unsigned int the_fuel);
         
-        unsigned int getFuel();
+        unsigned int getFuel() const;
+        
+        void addFuelCell(unsigned int fuelAmount);
+        
+        bool removeFuelCell(unsigned int cellNumber);
+
+        bool addFuelToCell(unsigned int cellNumber, unsigned int fuelAmount);
+    
+        string burnFuel(unsigned int cellNumber);
 };
 
+
+/*
+new private data members
+    vector<unsigned int> fuelCells
+
+new public function interface
+    void addFuelCell(unsigned int fuelAmount)
+    bool removeFuelCell(unsigned int cellNumber)
+
+    bool addFuelToCell(unsigned int cellNumber,
+                       unsigned int fuelAmount)
+
+    string burnFuel(unsigned int cellNumber)
+
+*/
 
 
 /*

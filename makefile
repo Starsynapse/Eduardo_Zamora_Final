@@ -5,10 +5,6 @@ TitanTest: CinReader.o titan.o
 
 SaturnTest: RocketShip.o saturn.o CinReader.o
 	g++ -Wall -g -o SaturnTest RocketShip.o saturn.o CinReader.o
-	
-#creates the RocketShip object file
-RocketShip: RocketShip RocketShip.h
-	g++ -Wall -g -c RocketShip.cpp
 
 
 JupiterTest: RocketShip.o jupiter.o CinReader.o
